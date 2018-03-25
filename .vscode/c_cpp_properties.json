@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino",
+                "C:\\Users\\Brad\\AppData\\Local\\Arduino15\\packages\\digistump\\hardware\\avr\\1.6.7\\libraries\\Adafruit_NeoPixel",
+                "Z:\\My Projects\\Drink Bot\\Drinko_Bot\\CUSTOM_MKS_BASE_FIRMWARE"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino",
+                    "C:\\Users\\Brad\\AppData\\Local\\Arduino15\\packages\\digistump\\hardware\\avr\\1.6.7\\libraries\\Adafruit_NeoPixel"
+                ]
+            },
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 3
+}
