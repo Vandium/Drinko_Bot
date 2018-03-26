@@ -57,6 +57,8 @@ String Stream = ""; // serial buffer
 String Descriptor = "";
 String X_MOVE = "";
 String Y_MOVE = "";
+int X = 0;
+int y = 0;
 
 
 
@@ -111,6 +113,22 @@ digitalWrite(E1_ENABLE_PIN,HIGH);
 
 void loop() {
 
+checkSerial(); // in the future this should return a boolean or maybe the interperatation of the G code
+
+if(x != 0 && y != 0){
+    moveTo(x,y)
+}
+
+
+
+if(x != 0){
+    moveTo(x,0)
+
+}
+
+if(y  != 0){
+    moveTo(0,y)
+}
 
 
   //3200 steps per rotation (1/16 micro stepping)
