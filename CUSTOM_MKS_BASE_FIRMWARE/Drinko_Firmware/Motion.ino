@@ -28,7 +28,7 @@ void moveTo(int MOVEX, int MOVEY){ // handels ALL interfacing with stepper drive
     while( XPROGRESS != MOVEX  && YPROGRESS != MOVEY){ // move both steppers similtaniously 
         digitalWrite(X_STEP_PIN,HIGH);
         digitalWrite(Y_STEP_PIN,HIGH);
-        delayMicroseconds(50);
+        delayMicroseconds(100);
         digitalWrite(X_STEP_PIN,LOW);
         digitalWrite(Y_STEP_PIN,LOW);
         XPROGRESS++;
@@ -39,7 +39,7 @@ void moveTo(int MOVEX, int MOVEY){ // handels ALL interfacing with stepper drive
 
     while( XPROGRESS != MOVEX ){ // move x stepper only
         digitalWrite(X_STEP_PIN,HIGH);
-        delayMicroseconds(50);
+        delayMicroseconds(100);
         digitalWrite(X_STEP_PIN,LOW);
         XPROGRESS++;
     }
@@ -47,7 +47,7 @@ void moveTo(int MOVEX, int MOVEY){ // handels ALL interfacing with stepper drive
 
     while(YPROGRESS != MOVEY){ // Move Y stepper only
         digitalWrite(Y_STEP_PIN,HIGH);
-        delayMicroseconds(50);
+        delayMicroseconds(100);
         digitalWrite(Y_STEP_PIN,LOW);
         YPROGRESS++;
 
