@@ -1,0 +1,11 @@
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+.vs
+/packages/
+!packages/repositories.config
+CUSTOM_MKS_BASE_FIRMWARE/Drinko_Firmware/.vscode/arduino.json
+CUSTOM_MKS_BASE_FIRMWARE/Drinko_Firmware/.vscode/c_cpp_properties.json

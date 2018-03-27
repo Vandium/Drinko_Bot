@@ -54,7 +54,7 @@ void moveTo(int MOVEX, int MOVEY){ // handels ALL interfacing with stepper drive
     }
 
     //we are done so disable steppers olding position is not important on this robot
-    digitalWrite(X_ENABLE_PIN,HIGH)
+    digitalWrite(X_ENABLE_PIN,HIGH);
     digitalWrite(Y_ENABLE_PIN,HIGH);
 
     //reset move buffer
