@@ -5,7 +5,13 @@ import time
 import cv2
 import numpy as np
 import os
+import serial
 #import VL53L0X
+
+
+hardware = serial.Serial('/dev/tty/USB0',115200) #create serial port for controll board
+print('Connected to:' + hardware.name()) # print the port being used 
+
 
  
 # initialize the camera and grab a reference to the raw camera capture
@@ -13,6 +19,12 @@ camera = PiCamera()
 camera.resolution = (640, 480)
 camera.framerate = 32
 rawCapture = PiRGBArray(camera, size=(640, 480))
+
+
+w = cam.get(cv2.CV_CAP_PROP_FRAME_WIDTH)
+h = cam.get(cv2.CV_CAP_PROP_FRAME_HEIGHT)
+CENTER_WIDTH = w/2
+CENTER_HEIGHT = h/2
 
 #camera settings
 camera.brightness = 60
@@ -94,6 +106,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
 		# motion must happen for 8 consecutive frames before trigger
 		if mframe > 8:
 			print("motion triggered now detecting cup placement....")
+			hardare.write('M400 R20 B20 G20 ') #send g code to turn on camera light for color detection
 			locating = True
 			mframe = 0
 			intialTrans = True
@@ -147,6 +160,12 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
 				print("Center:")
 				print("X:" + str(x))
 				print("Y:" + str(y))
+
+				x = x-CENTER_WIDTH # calculate cups horizontal distance to center of image
+				y = y-CENTER_HEIGHT	# calculate cups verticle distance to center of image
+
+
+				hardware.write('G1 X' + x +' Y' + y + ' ' ) # send gcode to move robot to coordinates this is incorrect we will need to calculate distance from center of image
     
  
 		# show the frame
@@ -165,6 +184,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
  
     # if the `x` key was pressed, break from the loop
 	if key == ord("x"):
+		hardware.close()
 		break
 		
 		

@@ -60,6 +60,7 @@ void moveTo(int MOVEX, int MOVEY){ // handels ALL interfacing with stepper drive
     //reset move buffer
     x = 0;
     y = 0;
+    Serial.println("Move Finished");
 
 
 
