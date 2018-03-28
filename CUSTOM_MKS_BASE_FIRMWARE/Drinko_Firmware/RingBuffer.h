@@ -7,8 +7,7 @@ class RingBuffer
         uint8_t RingBuffer::get();
         bool RingBuffer::isEmpty();
         uint16_t RingBuffer::getSize();
-        uint16_t RingBuffer::getLeading();
-        uint16_t RingBuffer::getLagging();
+        uint16_t RingBuffer::available();
 
     private:
         char *buffer;

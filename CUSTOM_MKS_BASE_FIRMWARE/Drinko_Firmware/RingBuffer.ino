@@ -1,3 +1,5 @@
+#include "RingBuffer.h"
+
 RingBuffer::RingBuffer(uint16_t length)
 {
     size = length;
@@ -52,12 +54,14 @@ uint16_t RingBuffer::getSize()
     return size;
 }
 
-uint16_t RingBuffer::getLeading()
+uint16_t RingBuffer::available()
 {
-    return leading;
-}
-
-uint16_t RingBuffer::getLagging()
-{
-    return lagging;
+    if(!empty)
+    {
+        return (size - lagging + leading) % size;
+    }
+    else
+    {
+        return 0;
+    }
 }
