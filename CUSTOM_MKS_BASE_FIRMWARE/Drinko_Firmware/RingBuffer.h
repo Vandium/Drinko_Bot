@@ -6,6 +6,7 @@ class RingBuffer
         void RingBuffer::put(char item);
         uint8_t RingBuffer::get();
         bool RingBuffer::isEmpty();
+        bool RingBuffer::isFull();
         uint16_t RingBuffer::getSize();
         uint16_t RingBuffer::available();
 

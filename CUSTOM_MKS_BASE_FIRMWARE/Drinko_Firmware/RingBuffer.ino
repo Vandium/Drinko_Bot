@@ -49,6 +49,12 @@ bool RingBuffer::isEmpty()
     return empty;
 }
 
+bool RingBuffer::isFull()
+{
+    if(empty) return false;
+    return lagging == leading ? true : false;
+}
+
 uint16_t RingBuffer::getSize()
 {
     return size;
