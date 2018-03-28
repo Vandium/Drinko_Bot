@@ -60,13 +60,21 @@ String Y_MOVE = "";
 int x = 0;
 int y = 0;
 
+// data buffers for manipulating led colors
+String SR = "";
+String SG = "";
+String SB = "";
+int CAM_R = 0;
+int CAM_G = 0;
+int CAM_B = 0;
+
 
 
 void setup() {
 Serial.begin(115200);
 CamLight.begin();
 Serial.println("Running.........");
-setAllColor(); // turns on Cam Light Ring
+setAllColor(10,10,10); // turns on Cam Light Ring
 
 
 // X axis stepper driver pins
@@ -114,6 +122,7 @@ digitalWrite(E1_ENABLE_PIN,HIGH);
 void loop() {
 
 checkSerial(); // in the future this should return a boolean or maybe the interperatation of the G code
+
 
 if(x != 0 && y != 0){
     moveTo(x,y);

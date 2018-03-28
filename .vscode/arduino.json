@@ -1,5 +1,5 @@
 {
     "board": "arduino:avr:mega",
     "configuration": "cpu=atmega2560",
-    "sketch": "CUSTOM_MKS_BASE_FIRMWARE\\basic_pin_test\\basic_pin_test.ino"
+    "sketch": "CUSTOM_MKS_BASE_FIRMWARE\\Drinko_Firmware\\Drinko_Firmware.ino"
 }
